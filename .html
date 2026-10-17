@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenVoice | Anonymous Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo">Open<span>Voice.</span></a>
+    <nav>
+      <a href="#feed">Feedback</a>
+      <a href="#polls">Polls</a>
+      <a href="#moderator">Moderation</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <span class="badge">YOUR VOICE MATTERS</span>
+      <h1>Speak freely. Stay anonymous.</h1>
+      <p>Share your thoughts, participate in polls, and help build a better community.</p>
+    </section>
+
+    <div class="layout">
+
+      <section class="main-column">
+
+        <div class="card">
+          <h2>Share your feedback</h2>
+          <p class="muted">Your name won't appear with your post.</p>
+
+          <form id="postForm">
+            <textarea id="postText" maxlength="1000"
+              placeholder="What's on your mind?" required></textarea>
+
+            <div class="form-footer">
+              <span id="charCount" class="muted">0 / 1000</span>
+              <button class="btn" type="submit">Post anonymously ↗</button>
+            </div>
+          </form>
+
+          <div class="notice">
+            Be respectful. Avoid sharing personal or identifying information.
+          </div>
+        </div>
+
+        <div class="card" id="feed">
+          <h2>Community feed</h2>
+          <p class="muted">Ideas and feedback from the community.</p>
+
+          <div class="tabs">
+            <button class="tab active" data-filter="all">All posts</button>
+            <button class="tab" data-filter="popular">Most liked</button>
+          </div>
+
+          <div id="posts"></div>
+        </div>
+
+      </section>
+
+      <aside class="sidebar">
+
+        <div class="card" id="polls">
+          <h2>Community poll</h2>
+          <p class="muted">What should we improve next?</p>
+
+          <div id="pollOptions"></div>
+          <p id="pollStatus" class="muted">Choose an option to vote.</p>
+
+          <button class="btn btn-light" id="resetVote">
+            Reset demo vote
+          </button>
+        </div>
+
+        <div class="card">
+          <h2>Community snapshot</h2>
+
+          <div class="stat">
+            <strong id="postTotal">0</strong>
+            <span class="muted">Community posts</span>
+          </div>
+
+          <div class="stat">
+            <strong id="voteTotal">0</strong>
+            <span class="muted">Poll votes</span>
+          </div>
+
+          <div class="stat">
+            <strong id="likeTotal">0</strong>
+            <span class="muted">Likes received</span>
+          </div>
+        </div>
+
+        <div class="card" id="moderator">
+          <h2>Moderator tools</h2>
+          <p class="muted">Sign in to manage community content.</p>
+
+          <form id="moderatorForm">
+            <input type="password" id="modPassword"
+              placeholder="Moderator password" required>
+
+            <button class="btn full-width" type="submit">
+              Enable moderation
+            </button>
+          </form>
+
+          <p id="modStatus" class="muted"></p>
+
+          <div class="notice">
+            Demo password: <strong>mod123</strong>
+            <br>Use secure server-side authentication in production.
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>OpenVoice · Anonymous feedback for a better community</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
